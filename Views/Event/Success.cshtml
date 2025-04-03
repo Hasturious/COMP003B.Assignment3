@@ -1,0 +1,45 @@
+﻿@model COMP003B.Assignment3.Models.EventRegistration
+
+@{
+    ViewData["Title"] = "Event Registration";
+}
+
+<h2>Event Registration</h2>
+
+<form asp-action="RegisterPost" method="post">
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EventCode"></label>
+        <input asp-for="EventCode" class="form-control" readonly />
+        <span asp-validation-for="EventCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tickets"></label>
+        <input asp-for="Tickets" type="number" class="form-control" min="1" max="10" />
+        <span asp-validation-for="Tickets" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReferralCode"></label>
+        <input asp-for="ReferralCode" class="form-control" />
+        <span asp-validation-for="ReferralCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

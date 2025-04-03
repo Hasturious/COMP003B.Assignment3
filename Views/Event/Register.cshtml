@@ -1,0 +1,22 @@
+﻿@model COMP003B.Assignment3.Models.EventRegistration
+
+@{
+    ViewData["Title"] = "Registration Successful";
+}
+
+<h2>Registration Successful</h2>
+
+<p>Thank you, <strong>@Model.FullName</strong>!</p>
+
+<ul>
+    <li>The email you have entered is <strong>Email:</strong> @Model.Email</li>
+    <li><strong>Event Code:</strong> @Model.EventCode</li>
+    <li><strong>Tickets:</strong> @Model.Tickets</li>
+
+    @if (!string.IsNullOrEmpty(Model.ReferralCode))
+    {
+        <li><strong>Referral Code:</strong> @Model.ReferralCode</li>
+    }
+</ul>
+
+<a asp-action="Register" class="btn btn-primary">Register Another</a>
